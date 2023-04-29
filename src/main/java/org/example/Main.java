@@ -74,7 +74,7 @@ public class Main {
         System.out.println("Введите что-нибудь, только не оставляетя строку пустой.");
         String a = scanner.nextLine();
         if (a.isEmpty()) {
-            throw new RuntimeException("Приложение рухнуло, вы виноваты, но мы не сердимся. Не оставляйте строку пустой!");
+            throw new RuntimeException("Приложение рухнуло, вы виноваты, но мы не сердимся. Не вводите пустую строку!");
         }
         System.out.println(a);
     }
