@@ -21,7 +21,7 @@ public class Main {
 //        Разработайте программу, которая выбросит Exception, когда пользователь вводит
 //        пустую строку. Пользователю должно показаться сообщение, что пустые строки
 //        вводить нельзя.
-
+        zadanie4();
     }
 
     private static void drobnoe() {
@@ -35,7 +35,8 @@ public class Main {
         }
 
     }
-    private static void zadanie2(){
+
+    private static void zadanie2() {
         try {
             int d = 0;
             int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -46,24 +47,37 @@ public class Main {
         }
 
     }
-    private static void zadanie3(){
-            try {
-                int a = 90;
-                int b = 3;
-                System.out.println(a / b);
-                printSum(23, 234);
-                int[] abc = { 1, 2 };
-                abc[3] = 9;
-            } catch (NullPointerException ex) {
-                System.out.println("Что-то пошло не так...");
-            } catch (IndexOutOfBoundsException ex) {
-                System.out.println("Указатель не может указывать на null!");
-            } catch (Throwable ex) {
-                System.out.println("Массив выходит за пределы своего размера!");
-            }
-        }
-        public static void printSum(Integer a, Integer b) {
-            System.out.println(a + b);
-        }
 
+    private static void zadanie3() {
+        try {
+            int a = 90;
+            int b = 3;
+            System.out.println(a / b);
+            printSum(23, 234);
+            int[] abc = {1, 2};
+            abc[3] = 9;
+        } catch (NullPointerException ex) {
+            System.out.println("Что-то пошло не так...");
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println("Указатель не может указывать на null!");
+        } catch (Throwable ex) {
+            System.out.println("Массив выходит за пределы своего размера!");
+        }
     }
+
+    public static void printSum(Integer a, Integer b) {
+        System.out.println(a + b);
+    }
+
+    public static void zadanie4() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите что-нибудь, только не оставляетя строку пустой.");
+        String a = scanner.nextLine();
+        if (a.isEmpty()) {
+            throw new RuntimeException("Приложение рухнуло, вы виноваты, но мы не сердимся. Не оставляйте строку пустой!");
+        }
+        System.out.println(a);
+    }
+}
+
+
